@@ -1,6 +1,6 @@
 // For local development, use: 'http://localhost:5001/api'
 // For production, use: 'https://gdg-project-yexd.onrender.com/api'
-const API_BASE = "http://localhost:5001/api";
+const API_BASE = "https://gdg-project-vp5k.onrender.com/api";
 
 export const api = {
   get: async (endpoint) => {
