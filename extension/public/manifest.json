@@ -1,0 +1,56 @@
+{
+    "manifest_version": 3,
+    "name": "Linka - Social Media Saver",
+    "version": "1.0.0",
+    "description": "Save and organize posts from LinkedIn, Twitter, and Instagram.",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "contextMenus",
+        "scripting",
+        "notifications"
+    ],
+    "host_permissions": [
+        "http://localhost:5001/*",
+        "https://gdg-project-yexd.onrender.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "background": {
+        "service_worker": "assets/background.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "assets/content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "assets/*",
+                "dashboard.html"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    }
+}
